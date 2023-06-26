@@ -10,3 +10,9 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         path: "*.AppImage"
+    - uses: softprops/action-gh-release@v1
+      with:
+        files: "*.AppImage"
+        tag_name: ${{github.ref_name}}-nightly
+        prerelease: true
+        target_commitish: ${{github.sha}}
