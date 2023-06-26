@@ -5,8 +5,7 @@ jobs:
     steps:
     - run: |
         git clone https://eaas.dev/docker2image -b merge-usr
-        docker2image/docker2appimage eaas/eaas-appserver:pre-gnutls-update@sha256:a96c1ac7adb599d1eff0e465fd762bbb05b80f6750ec98c060fd1fac13a9df3e
-        mv *.AppImage qemu-system-x86_64~qemu-eaas-2.5.0-bwfla5.AppImage
+        docker2image/docker2appimage eaas/eaas-appserver:pre-gnutls-update@sha256:a96c1ac7adb599d1eff0e465fd762bbb05b80f6750ec98c060fd1fac13a9df3e qemu-system-x86_64~qemu-eaas-2.5.0-bwfla5.AppImage
     - uses: actions/upload-artifact@v3
       with:
         path: "*.AppImage"
