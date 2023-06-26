@@ -2,6 +2,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - run: |
         git clone https://eaas.dev/docker2image -b merge-usr
